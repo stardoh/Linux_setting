@@ -11,5 +11,9 @@ nvcc --version or nvcc -V(check CUDA version)
 
 cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2 (check cudnn version)
 
+## 가상환경 설정 위한 것들
+
 ### 아나콘다 설치
 설치 설명 링크 <https://osg.kr/archives/3899>
+
+### 파이토치 설치
