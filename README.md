@@ -10,3 +10,6 @@ nvidia-smi (check whether the GPU is correctly detected)
 nvcc --version or nvcc -V(check CUDA version)
 
 cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2 (check cudnn version)
+
+### 아나콘다 설치
+설치 설명 링크 <https://osg.kr/archives/3899>
