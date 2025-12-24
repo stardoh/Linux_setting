@@ -24,7 +24,7 @@ cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2 (check cudnn
 ### raisin 설치법
 설치 가이드 링크 <https://github.com/raionrobotics/raisin_master>
 
-install package 할 때 잘 안되면 requirement.txt 눌러서 제목 따서 하나하나 다운로드 해주기.
+install package 할 때 잘 안되면 repositories.yaml 눌러서 제목 따서 하나하나 다운로드 해주기.
 
 
 ### raisin 켜는 법
@@ -37,4 +37,7 @@ install package 할 때 잘 안되면 requirement.txt 눌러서 제목 따서 �
 4. 턴 온 누르고 좀 기다리고 아래 있는 제어기 로드 하기.
 
 5. 끌 때는 턴 오프 먼저 하고 기다린 후에 ctrl + c 해서 끄기
+
+# RealSense Camera 사용법
+기본 가이드 링크 <https://coding-ga-ding.tistory.com/179>
 
