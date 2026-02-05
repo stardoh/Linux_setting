@@ -41,6 +41,9 @@ install package 할 때 잘 안되면 repositories.yaml 눌러서 제목 따서 
 
 5. 끌 때는 턴 오프 먼저 하고 기다린 후에 ctrl + c 해서 끄기
 
+# Vscode 좋은 extension
+1. Nogic -> cmd + shift + P 한 이후에 Nogic:open visualizer 사용하면 코드의 흐름을 화살표로 잘 볼 수 있음. 
+
 # RealSense Camera 사용법
 기본 가이드 링크 <https://coding-ga-ding.tistory.com/179>
 
