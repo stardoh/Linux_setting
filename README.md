@@ -18,6 +18,9 @@ cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2 (check cudnn
 
 ### 파이토치 설치
 
+# Raisim 설치
+설치 가이드 링크 <https://raisim.com/sections/Installation.html>
+주의할 점: bashrc에 경로 지정해주고 source ~/.bashrc 해주기, 22.04에서 sudo ln -s /usr/lib/x86_64-linux-gnu/libdl.so.2 /usr/lib/x86_64-linux-gnu/libdl.so 하라고 되어있는데, 24.04에서도 해줘야 함. 22.04 이후 버전이라면 시행하기.
 
 # Raisin 설치 및 켜는 법
 
