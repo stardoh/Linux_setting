@@ -104,14 +104,14 @@ plugin이나 이런 설정은 각 로봇의 환경에 맞게 세팅하면 되고
 docker run -it -e "DISPLAY=$DISPLAY" -e "QT_X11_NO_MITSHM=1" -e "XAUTHORITY=$XAUTH" -v "/tmp/.X11-unix:/tmp/.X11-unix:rw" -v ${PWD}/:/dataset --gpus all  --net=host --ipc=host --privileged --name [컨테이너로쓸이름] [이미지이름] 
 : 이미지가 있고 , 컨테이너 화 해서 실행시킬때 쓰는명령어고
  
-docker images : 현재 갖고잇는 도커 이미지들 보기 
+docker images : 현재 갖고 있는 도커 이미지들 보기 
 docker ps :현재 실행되는 컨테이너 목록 보기 
 docker ps -a : 진짜 다 있는 컨테이너 목록보기
  
-있긴한데 컨테이너가 있긴한데 컨테이너 종료  : docker start 컨테이너이름  <<- 컨테이너살아남 
-docker stop <<- docker ps 에는 잇엇는데 , 얘를 종료시킬수잇음 , docker ps -a 해야 보여요
+컨테이너가 있긴 한데 컨테이너 종료  : docker start 컨테이너이름  <<- 컨테이너살아남 
+docker stop <<- docker ps 에는 있엇는데 , 얘를 종료 시킬 수 있음 , docker ps -a 해야 보임.
  
-docker attach 컨테이너이름 <<- docker ps 에 잇는 목록에 잇는 컨테이너에 접속하기 
-컨테이너 안에잇는데 나가고싶어 : ctrl + D 나가지는데 >> docker ps -a 해야 보임 (컴퓨터 끈거랑 동일) 
-컨테이너 안에있는데 컴퓨터 안끄고 나가고싶어 docker ps 만 쳐서 보이게싶어 컴퓨터 끄기싫음: ctrl +p , q  
+docker attach 컨테이너이름 <<- docker ps 에 잇는 목록에 있는 컨테이너에 접속하기 
+컨테이너 안에 있는데 나가고 싶어 : ctrl + D 나가지는 데 >> docker ps -a 해야 보임 (컴퓨터 끈거랑 동일) 
+컨테이너 안에 있는데 컴퓨터 안 끄고 나가고 싶어 -> docker ps 만 쳐서 보이게싶어 :컴퓨터 끄기싫음: ctrl +p , q  
 
