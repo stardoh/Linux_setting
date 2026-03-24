@@ -54,7 +54,6 @@ install package 할 때 잘 안되면 repositories.yaml 눌러서 제목 따서 
 전부 다 raisin_ws(raisin_master)
 
 OTA에 ssh key 등록 : ssh-key gen -> enter 4번(passphrase 없이)
-
 <br>
 <br>
 raisin_master clone 후에
@@ -65,10 +64,7 @@ python3 raisin.py setup 하고
 
 install_dependencies.sh 실행
 
-<br>
-<br>
 python3 raisin.py build -t release -i
-
 <br>
 <br>
 **노드실행 : **
@@ -78,19 +74,44 @@ python3 raisin.py build -t release -i
 source ld_prefix_path.sh
 
 [nice -n 20] ./install/bin/raisin_raibo2_node [real] (sim이면 real을 빼고)
-
 <br>
 <br>
-
 **구이 실행 : **
 
 source ld_prefix_path.sh
 
 ./install/bin/raisin_gui
 
+# 로봇에 새 제어기 올릴 때 어떻게 해야 하는지
+
+plugin이나 이런 설정은 각 로봇의 환경에 맞게 세팅하면 되고, 전부 세팅이 완료되었으면 아래 과정을 따르면 됨.
+ 
+학습된 제어기를 pt_to_txt.py를 이용해서 변환한 이후에 이 파일을 raibo_controller/raisin_blind_locomotion_controller/resource/donghoon(사용자명) 폴더 안에 넣고 params.yaml에서 제어기 경로를 변환 (network_path 수정)
+ 
+이후에 python3 raisin.py build -t- release -i
+ 
+이후 노드, 구이 실행하면 버전이 바뀐 제어기, 또는 새 제어기가 올라가 있을 것.
+(주의할 점! : 새 제어기를 올릴 때에는 항상 호이스트에 연결 후 스탠드업 시키고 새 제어기를 로드할 것 (발산 방지), 주변에 사람이 없게 할 것.
+
 # Vscode 좋은 extension
 1. Nogic -> cmd + shift + P 한 이후에 Nogic:open visualizer 사용하면 코드의 흐름을 화살표로 잘 볼 수 있음. 
 
 # RealSense Camera 사용법
 기본 가이드 링크 <https://coding-ga-ding.tistory.com/179>
+
+# 간단한 서버 사용법
+
+docker run -it -e "DISPLAY=$DISPLAY" -e "QT_X11_NO_MITSHM=1" -e "XAUTHORITY=$XAUTH" -v "/tmp/.X11-unix:/tmp/.X11-unix:rw" -v ${PWD}/:/dataset --gpus all  --net=host --ipc=host --privileged --name [컨테이너로쓸이름] [이미지이름] 
+: 이미지가 있고 , 컨테이너 화 해서 실행시킬때 쓰는명령어고
+ 
+docker images : 현재 갖고잇는 도커 이미지들 보기 
+docker ps :현재 실행되는 컨테이너 목록 보기 
+docker ps -a : 진짜 다 있는 컨테이너 목록보기
+ 
+있긴한데 컨테이너가 있긴한데 컨테이너 종료  : docker start 컨테이너이름  <<- 컨테이너살아남 
+docker stop <<- docker ps 에는 잇엇는데 , 얘를 종료시킬수잇음 , docker ps -a 해야 보여요
+ 
+docker attach 컨테이너이름 <<- docker ps 에 잇는 목록에 잇는 컨테이너에 접속하기 
+컨테이너 안에잇는데 나가고싶어 : ctrl + D 나가지는데 >> docker ps -a 해야 보임 (컴퓨터 끈거랑 동일) 
+컨테이너 안에있는데 컴퓨터 안끄고 나가고싶어 docker ps 만 쳐서 보이게싶어 컴퓨터 끄기싫음: ctrl +p , q  
 
