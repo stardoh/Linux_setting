@@ -54,16 +54,22 @@ install package 할 때 잘 안되면 repositories.yaml 눌러서 제목 따서 
 전부 다 raisin_ws(raisin_master)
 
 OTA에 ssh key 등록 : ssh-key gen -> enter 4번(passphrase 없이)
+
+<br>
 <br>
 raisin_master clone 후에
 
 python3 raisin.py install raisin_gui raisin_raibo2
 
 python3 raisin.py setup 하고
-<br>
+
 install_dependencies.sh 실행
- 
+
+<br>
+<br>
 python3 raisin.py build -t release -i
+
+<br>
 <br>
 **노드실행 : **
 
@@ -73,6 +79,7 @@ source ld_prefix_path.sh
 
 [nice -n 20] ./install/bin/raisin_raibo2_node [real] (sim이면 real을 빼고)
 
+<br>
 <br>
 
 **구이 실행 : **
