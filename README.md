@@ -28,7 +28,10 @@ cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2 (check cudnn
 
 (추가) 어차피 C++ executable 만들어서 pybind로 돌리는 것이기 때문에 그냥 rbuild 같은 빌드 명령어 쳐서 빌드 하고 runner.py 실행해도 됨.
 
-추가로, runner.py에서 env.turn_on_visualization() 부분이 켜져야 매 iteration마다 시각화가 되는 것을 볼 수 있음 -> 학습 시간이 늘어나니까 일정 iteration마다 보게만 하거나, 아예 끄고 나중에 tester.py 코드 만들어서 보는 것을 추천.ㅣ
+추가로, runner.py에서 env.turn_on_visualization() 부분이 켜져야 매 iteration마다 시각화가 되는 것을 볼 수 있음 -> 학습 시간이 늘어나니까 일정 iteration마다 보게만 하거나, 아예 끄고 나중에 tester.py 코드 만들어서 보는 것을 추천.
+
+### tester.py 만드는 법
+runner.py를 돌리면 .pt 파일이 생성이 됨. 이렇게 생성된 .pt 파일의 주소를 복사해서 tester.py에 붙여 넣고 runner 돌리는 것처럼 tester를 돌리게 되면 학습이 아니라 테스트용 지형 및 설정된 조이스틱 명령을 따라서 돌아감. 기본적으로 B 키를 누르게 되면 env가 reset되면서 원점으로 돌아옴.
 
 # Raisin 설치 및 켜는 법
 
