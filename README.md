@@ -24,7 +24,7 @@ cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2 (check cudnn
 주의할 점: bashrc에 경로 지정해주고 source ~/.bashrc 해주기, 22.04에서 sudo ln -s /usr/lib/x86_64-linux-gnu/libdl.so.2 /usr/lib/x86_64-linux-gnu/libdl.so 하라고 되어있는데, 24.04에서도 해줘야 함. 22.04 이후 버전이라면 시행하기.
 
 ## Raisim 설치 이후에 빌드 후 runner 돌려서 시각화 하는 법
-코드 작성 이후 vscode 상의 terminal이나, 동일한 위치에서 python(3) setup.py develop -> python(3) raisimGymTorch/env/envs/raibo2/runner.py (괄호는 python으로 안되면 python3으로, runner.py가 있는 경로로 알아서 바꿔주면 됨)
+코드 작성 이후 vscode 상의 terminal이나, 동일한 위치(보통 ~/workspace/raisimGym: setup.py 있는 폴더)에서 python(3) setup.py develop -> python(3) raisimGymTorch/env/envs/raibo2/runner.py (괄호는 python으로 안되면 python3으로, runner.py가 있는 경로로 알아서 바꿔주면 됨)
 
 어차피 C++ executable 만들어서 pybind로 돌리는 것이기 때문에 그냥 rbuild 같은 빌드 명령어 쳐서 빌드 하고 runner.py 실행하면 됨.
 
