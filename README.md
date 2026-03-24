@@ -49,6 +49,41 @@ install package 할 때 잘 안되면 repositories.yaml 눌러서 제목 따서 
 
 5. 끌 때는 턴 오프 먼저 하고 기다린 후에 ctrl + c 해서 끄기
 
+### raisin 처음 설치 시에 실행 과정 및 로봇 노드, 구이 켜는 법
+
+전부 다 raisin_ws(raisin_master)
+
+OTA에 ssh key 등록 : ssh-key gen -> enter 4번(passphrase 없이)
+
+ 
+raisin_master clone 후에
+
+python3 raisin.py install raisin_gui raisin_raibo2
+
+python3 raisin.py setup 하고
+
+
+install_dependencies.sh 실행
+ 
+python3 raisin.py build -t release -i
+
+ 
+**노드실행 : **
+
+[sudo su]
+
+source ld_prefix_path.sh
+
+[nice -n 20] ./install/bin/raisin_raibo2_node [real] (sim이면 real을 빼고)
+
+
+
+**구이 실행 : **
+
+source ld_prefix_path.sh
+
+./install/bin/raisin_gui
+
 # Vscode 좋은 extension
 1. Nogic -> cmd + shift + P 한 이후에 Nogic:open visualizer 사용하면 코드의 흐름을 화살표로 잘 볼 수 있음. 
 
